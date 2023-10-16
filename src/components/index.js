@@ -8,4 +8,14 @@ import ManageProduct from "./Manageproduct";
 import ManageUser from "./Manageuser";
 import ProductDetail from "./ProductDetail";
 
-export {Cart, Footer, Header, Home, Login, ManageProduct, ManageUser, ProductDetail, Register };
+export {
+  Cart,
+  Footer,
+  Header,
+  Home,
+  Login,
+  ManageProduct,
+  ManageUser,
+  ProductDetail,
+  Register,
+};
