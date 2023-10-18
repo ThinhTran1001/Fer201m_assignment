@@ -1,7 +1,8 @@
 
 import React from 'react'
-import { Col, Container, Row } from 'react-bootstrap'
+import { Image, Col, Container, Row } from 'react-bootstrap';
 import './css/product.css'
+
 
 
 export default function ProductDetail() {
@@ -15,13 +16,14 @@ export default function ProductDetail() {
                         <aside class="col-md-6">
                                 <article class="gallery-wrap">
                                     <div class="card img-big-wrap">
-                                        <a href="#"> <img src="/images/product/tim.jpg" /></a>
+                                        <a href="#"> <Image src="/images/product/tim.jpg" /></a>
                                     </div> 
                                     <div class="thumbs-wrap">
-                                        <a href="#" class="item-thumb"> <img src="/images/product/tim.jpg" /></a>
-                                        <a href="#" class="item-thumb"> <img src="/images/product/trang.jpg" /></a>
-                                        <a href="#" class="item-thumb"> <img src="/images/product/den.jpg" /></a>
-                                        <a href="#" class="item-thumb"> <img src="/images/product/vang.jpg" /></a>
+                                        <a href="#" class="item-thumb"> <Image src="/images/product/tim.jpg" /></a>
+                                        <a href="#" class="item-thumb"> <Image src="/images/product/trang.jpg" /></a>
+                                        <a href="#" class="item-thumb"> <Image src="/images/product/den.jpg" /></a>
+                                        <a href="#" class="item-thumb"> <Image src="/images/product/vang.jpg" /></a>
+
                                     </div>
                                 </article>
                         </aside>
@@ -124,7 +126,7 @@ export default function ProductDetail() {
                 từng chi tiết và màn hình chuyển sang thiết kế đục lỗ viên thuốc 
                 nằm ngang thay thế cho màn hình tai thỏ.
                 </p>
-                <img className="img-fluid-center" src="/images/product/3.jpg" />
+                <Image className="img-fluid-center" src="/images/product/3.jpg" />
                 <p className="img-name">Thiết kế màn hình mới</p>
                 <h6>Thiết kế</h6>
                 <p>
@@ -133,7 +135,7 @@ export default function ProductDetail() {
                 thời gian cho máy. Ngoài ra, máy sở hữu cụm 3 camera đặt thành hình tam giác 
                 hiện đại giống như thiết kế tiền nhiệm.
                 </p>
-                <img className="img-fluid-center" src="/images/product/2.jpg" />
+                <Image className="img-fluid-center" src="/images/product/2.jpg" />
                 <p className="img-name">Sở hữu khung viền bằng thép và mặt lưng kính</p>
                 <h6>Màn hình</h6>
                 <p>
@@ -142,7 +144,7 @@ export default function ProductDetail() {
                 với kích thước 6.7 inch đi kèm độ phân giải Super Retina XDR giúp cho mọi chi tiết 
                 màn hình vô cùng sống động và sắc nét.
                 </p>
-                <img className="img-fluid-center" src="/images/product/1.jpeg" />
+                <Image className="img-fluid-center" src="/images/product/1.jpeg" />
                 <p className="img-name">Màn hình viên thuốc hiện đại</p>
 
             </div> 
