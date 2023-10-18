@@ -1,0 +1,27 @@
+.btn-muangay {
+    background-color: orangered !important;;
+    color: white !important;;
+}
+
+.card .img-big-wrap img {
+    max-width: 100%; 
+    height: auto; 
+}
+
+.thumbs-wrap .item-thumb img {
+    max-width: 100px; 
+    height: auto; 
+}
+.img-fluid-center {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.img-name {
+    text-align: center;
+    font-size: 14px;
+}
