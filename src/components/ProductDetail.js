@@ -27,7 +27,7 @@ export default function ProductDetail() {
                         </aside>
                         <main class="col-md-6">
                             <article>
-                                <a href="/" class="text-primary btn-link">Trang chủ</a> > <a href="#" class="text-primary btn-link">iPhone</a> 
+                                <a href="/" class="text-primary btn-link">Trang chủ</a> / <a href="#" class="text-primary btn-link">iPhone</a> 
                                 <h3 class="title">iPhone 14 Pro Max 128GB</h3>
         
                                 <hr />
@@ -43,7 +43,7 @@ export default function ProductDetail() {
                                 </div>
                                 
                                 <div class="form-group">
-                                    <label class="color-picker">Chọn màu</label>
+                                    <label class="color-picker">Chọn màu:</label>
                                     <div>
                                         <label class="color-choose">
                                             <input type="radio" name="option_color" value="option1" />
@@ -63,8 +63,9 @@ export default function ProductDetail() {
                                         </label>  
                                     </div>            
                                 </div>
-        
+                                <var>Giá niêm yết:</var>
                                 <div class="mb-3">
+                                    
                                     <var class="price h4" style={{color: 'red'}}>26.090.000đ</var> <br />
                                 </div> 
         
@@ -79,6 +80,7 @@ export default function ProductDetail() {
             </div> 
         </article>
         <article class="card mt-5">
+        
             <div class="card-body">
                 <div class="row">
                     <aside class="col-md-6">
@@ -112,6 +114,7 @@ export default function ProductDetail() {
                     </aside>
                 </div> 
                 <hr />
+                <h3 class="intro">Giới thiệu về iPhone 14 Pro Max</h3>
                 <h6>Tổng quan</h6>
                 <p>
                 iPhone 14 Pro Max là sản phẩm thuộc dòng iPhone 14 series 

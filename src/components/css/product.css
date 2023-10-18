@@ -9,8 +9,9 @@
 }
 
 .thumbs-wrap .item-thumb img {
-    max-width: 100px; 
+    max-width: 15%; 
     height: auto; 
+    justify-content: center;
 }
 .img-fluid-center {
     max-width: 100%;
@@ -24,4 +25,13 @@
 .img-name {
     text-align: center;
     font-size: 14px;
+}
+.thumbs-wrap {
+    justify-content: center;
+}
+.color-choose {
+    display: flex;
+}
+.intro {
+    text-align: center;
 }
