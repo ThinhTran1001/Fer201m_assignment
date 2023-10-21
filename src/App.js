@@ -14,7 +14,7 @@ import { Link, BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <Container>
+    <Container fluid>
       <Header />
       <Router>
         <ul>
