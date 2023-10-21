@@ -22,6 +22,7 @@ import {
   faDesktop
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <>
@@ -112,9 +113,9 @@ const Header = () => {
 </Nav>
         </Container>
       </Row> */}
-       <Row className="text-white" style={{ justifyContent: "left", backgroundColor: "#DA6F22", height: "120px" }}>
+       {/* <Row className="text-white" style={{ justifyContent: "left", backgroundColor: "#DA6F22", height: "120px" }}>
       <Container>
-        <Nav className="justify-content-start" activeKey="/home">
+        <Nav className="justify-content-start" >
           <Nav.Item>
             <Nav.Link href="/" style={{ color: "white", fontSize: "30px" }}>
               JSPhone
@@ -168,7 +169,70 @@ const Header = () => {
           </Nav.Item>
         </Nav>
       </Container>
-    </Row>
+    </Row> */}
+   <Row className="text-white" style={{ justifyContent: "left", backgroundColor: "#DA6F22", height: "120px" }}>
+  <Container>
+    <Nav className="justify-content-start">
+      <Nav.Item>
+        <Nav.Link href="/" style={{ color: "white", fontSize: "30px" }}>
+          JSPhone
+          <img src={logo} style={{ width: "30px", height: "30px", margin: "10px" }} alt="logo" />
+        </Nav.Link>
+      </Nav.Item>
+      <Nav.Item style={{ marginTop: "15px", marginLeft: "50px", width: "350px" }}>
+        <Form.Control type="text" placeholder="Search" />
+      </Nav.Item>
+      <Nav.Item style={{ marginTop: "25px", marginLeft: "10px" }}>
+        <FontAwesomeIcon icon={faSearch} style={{ color: "black" }} />
+      </Nav.Item>
+      <Nav.Item style={{ marginTop: "20px", marginLeft: "auto", marginRight: "40px" }}>
+        <a href="/tra-cuu-don-hang" style={{ textDecoration: "none" }}>
+          <Button style={{ marginRight: '10px', backgroundColor: '#DA4E22'}}>
+            <FontAwesomeIcon icon={faTruck} style={{ marginRight: "5px", color: 'black'  }} /> Tra cứu đơn hàng
+          </Button>
+        </a>
+        <a href="/gio-hang" style={{ textDecoration: "none" }}>
+          <Button style={{ marginRight: '10px', backgroundColor: '#DA4E22'}}>
+            <FontAwesomeIcon icon={faShoppingCart} style={{ marginRight: "5px", color: 'black' }} /> Giỏ hàng
+          </Button>
+        </a>
+        <a href="/dang-nhap" style={{ textDecoration: "none" }}>
+          <Button style={{ marginRight: '10px', backgroundColor: '#DA4E22'}}>Đăng nhập</Button>
+        </a>
+        <a href="/dang-ky" style={{ textDecoration: "none" }}>
+          <Button style={{ marginRight: '10px', backgroundColor: '#DA4E22' }}>Đăng ký</Button>
+        </a>
+      </Nav.Item>
+    </Nav>
+    <Nav justify variant="tabs" defaultActiveKey="/home" style={{ marginTop: "10px" }}>
+      <Nav.Item>
+        <Nav.Link href="/dien-thoai" style={{ color: "black" }}>
+          <FontAwesomeIcon icon={faMobile} style={{ marginRight: "5px" }} /> Điện thoại
+        </Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link href="/laptop" style={{ color: "black" }}>
+          <FontAwesomeIcon icon={faLaptop} style={{ marginRight: "5px" }} /> Laptop
+        </Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link href="/tablet" style={{ color: "black" }}>
+          <FontAwesomeIcon icon={faTablet} style={{ marginRight: "5px" }} /> Tablet
+        </Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link href="/phu-kien" style={{ color: "black" }}>
+          <FontAwesomeIcon icon={faHeadphones} style={{ marginRight: "5px" }} /> Phụ kiện
+        </Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link href="/pc-man-hinh" style={{ color: "black" }}>
+          <FontAwesomeIcon icon={faDesktop} style={{ marginRight: "5px" }} /> PC, Màn hình
+        </Nav.Link>
+      </Nav.Item>
+    </Nav>
+  </Container>
+</Row>
     </>
   );
 };
