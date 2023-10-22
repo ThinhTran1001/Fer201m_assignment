@@ -14,7 +14,7 @@ import { Link, BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <Container>
+    <Container fluid>
       <Header />
       <Router>
         <ul>
@@ -25,7 +25,7 @@ function App() {
             <Link to={"/login"}>Login</Link>
           </li>
           <li>
-            <Link to={"/legister"}>Register</Link>
+            <Link to={"/register"}>Register</Link>
           </li>
           <li>
             <Link to={"/cart"}>Cart</Link>
