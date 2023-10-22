@@ -25,7 +25,7 @@ function App() {
             <Link to={"/login"}>Login</Link>
           </li>
           <li>
-            <Link to={"/legister"}>Register</Link>
+            <Link to={"/register"}>Register</Link>
           </li>
           <li>
             <Link to={"/cart"}>Cart</Link>
