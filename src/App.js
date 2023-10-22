@@ -1,15 +1,5 @@
 import { Container } from "react-bootstrap";
-import {
-  Cart,
-  Footer,
-  Header,
-  Home,
-  Login,
-  ManageProduct,
-  ManageUser,
-  ProductDetail,
-  Register,
-} from "./components";
+import {Cart, Footer, Header, Home, Login, ManageProduct, ManageUser, ProductDetail, Register} from "./components";
 import { Link, BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -25,7 +15,7 @@ function App() {
             <Link to={"/login"}>Login</Link>
           </li>
           <li>
-            <Link to={"/legister"}>Register</Link>
+            <Link to={"/register"}>Register</Link>
           </li>
           <li>
             <Link to={"/cart"}>Cart</Link>
