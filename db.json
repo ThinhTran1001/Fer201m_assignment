@@ -1,0 +1,151 @@
+{
+    "user": [
+      {
+        "id": 1,
+        "name": "Tran Duc Thinh",
+        "password":"123456",
+        "email":"thinhtdhe173229@fpt.edu.vn",
+        "phone_number":"0342617981",
+        "age": "20",
+        "address": "97 Vườn Đào"
+      },
+      {
+        "id": 2,
+        "name": "Do Minh Tu",
+        "password":"123456",
+        "email":"tudmhs170394@fpt.edu.vn",
+        "phone_number":"0123456789",
+        "age": "20",
+        "address":"97 Garden Peach"
+      },
+      {
+        "id": 3,
+        "name": "Pham Hung Quang Huy",
+        "password":"123456",
+        "email":"huyqhp172932@fpt.edu.vn",
+        "phone_number":"0931223344",
+        "age": "20",
+        "address": "326 cụm 4 thôn 3 xã Thạch Hòa "
+      }
+    ],
+    "product": [
+      {
+        "id": 1,
+        "name": "Iphone 14 promax",
+        "img":"./images/product/iphone14promax.png",
+        "detail":"may sieu dep sieu nhanh",
+        "categoryId": 1,
+        "brandId": 1,
+        "price": "26.090.000đ",
+        "quantity":"30",
+        "status": true
+      },
+      {
+        "id": 2,
+        "name": "Iphone 13 promax",
+        "detail":"may sieu dep sieu nhanh",
+        "categoryId": 1,
+        "brandId": 1,
+        "price": "23.090.000đ",
+        "quantity":"13",
+        "status": true
+      },
+      {
+        "id": 3,
+        "name": "Iphone 12 promax",
+        "detail": "may sieu dep sieu nhanh",
+        "categoryId": 1,
+        "brandId": 1,
+        "price": "16.090.000đ",
+        "quantity":"31",
+        "status": true
+      },
+      {
+        "id": 4,
+        "name": "Iphone 11 promax",
+        "detail": "may sieu dep sieu nhanh",
+        "categoryId": 1,
+        "brandId": 1,
+        "price": "10.090.000đ",
+        "quantity":"31",
+        "status": true
+      }
+    ],
+    "brand": [{
+      "id": "1",
+      "name": "Apple",
+      "Status":true
+    },
+    {
+      "id": "2",
+      "name": "Samsung",
+      "Status":true
+    },
+    {
+      "id": "3",
+      "name": "OPPO",
+      "Status":true
+    },
+    {
+      "id":"4",
+      "name":"ASUS",
+      "Status":true
+    }
+  ],
+    "category":[{
+      "id":1,
+      "name":"dien thoai",
+      "status":true
+    },
+    {
+      "id":2,
+      "name":"laptop",
+      "status":true
+    },
+    {
+      "id":3,
+      "name":"phu kien",
+      "status":true
+    },
+    {
+      "id":4,
+      "name":"tablet",
+      "status":true
+    }
+  ],
+    "cart":[
+    {
+      "id":1,
+      "userId":2,
+      "item":[
+      {
+        "id": 1,
+        "name": "Iphone 14 promax",
+        "price": "26.090.000đ",
+        "quantiy":1
+      }
+      ],
+      "total":"26.090.000đ"
+    }
+  ],
+    "order":[
+    {
+      "id":1,
+      "userId":2,
+      "orderAt": "Mon Oct 30 2023 13:05:17 GMT+0700",
+      "item":[
+        {
+          "id":1,
+          "name": "Iphone 14 promax",
+          "price": "26.090.000đ",
+          "quantiy":1
+        }
+      ],
+      "address":"97 Vườn Đào",
+      "shipping":"free ship",
+      "total": "26.090.000đ",
+      "status": "pending"
+    }
+  ]
+    
+  }
