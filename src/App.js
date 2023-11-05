@@ -10,30 +10,48 @@ import {
   ProductDetail,
   Register,
 } from "./components";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Outlet,
+} from "react-router-dom";
+import { useEffect, useState } from "react";
 
 function App() {
   const [isLogin, setIsLogin] = useState(false);
 
+  useEffect(() => {
+    console.log("Reload");
+  }, []);
+
+  function Layout() {
+    return (
+      <>
+        <Header isLogin={isLogin} setIsLogin={setIsLogin} />
+        <Outlet />
+        <Footer />
+      </>
+    );
+  }
   return (
     <Container fluid>
-      <Header isLogin={isLogin} setIsLogin={setIsLogin} />
       <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route
-            path="/login"
-            element={<Login isLogin={isLogin} setIsLogin={setIsLogin} />}
-          />
-          <Route path="/register" element={<Register />} />
-          <Route path="/product/detail" element={<ProductDetail />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/manageuser" element={<ManageUser />} />
-          <Route path="/manageproduct" element={<ManageProduct />} />
+          <Route element={<Layout />}>
+            <Route path="/" element={<Home />} />
+            <Route
+              path="/login"
+              element={<Login isLogin={isLogin} setIsLogin={setIsLogin} />}
+            />
+            <Route path="/register" element={<Register />} />
+            <Route path="/product/detail" element={<ProductDetail />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/manageuser" element={<ManageUser />} />
+            <Route path="/manageproduct" element={<ManageProduct />} />
+          </Route>
         </Routes>
       </Router>
-      <Footer />
     </Container>
   );
 }
