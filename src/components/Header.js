@@ -15,6 +15,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { Link } from "react-router-dom";
 const Header = ({ isLogin, setIsLogin }) => {
   let user;
   if (isLogin) {
@@ -63,28 +64,42 @@ const Header = ({ isLogin, setIsLogin }) => {
                 marginRight: "40px",
               }}
             >
-              <a href="/tra-cuu-don-hang" style={{ textDecoration: "none" }}>
-                <Button
-                  style={{ marginRight: "10px", backgroundColor: "#DA4E22" }}
-                >
-                  <FontAwesomeIcon
-                    icon={faTruck}
-                    style={{ marginRight: "5px", color: "black" }}
-                  />{" "}
-                  Tra cứu đơn hàng
-                </Button>
-              </a>
-              <a href="/gio-hang" style={{ textDecoration: "none" }}>
-                <Button
-                  style={{ marginRight: "10px", backgroundColor: "#DA4E22" }}
-                >
-                  <FontAwesomeIcon
-                    icon={faShoppingCart}
-                    style={{ marginRight: "5px", color: "black" }}
-                  />{" "}
-                  Giỏ hàng
-                </Button>
-              </a>
+              {isLogin && (
+                <>
+                  <Link
+                    to="/tra-cuu-don-hang"
+                    style={{ textDecoration: "none" }}
+                  >
+                    <Button
+                      style={{
+                        marginRight: "10px",
+                        backgroundColor: "#DA4E22",
+                      }}
+                    >
+                      <FontAwesomeIcon
+                        icon={faTruck}
+                        style={{ marginRight: "5px", color: "black" }}
+                      />{" "}
+                      Tra cứu đơn hàng
+                    </Button>
+                  </Link>
+                  <Link to={"cart"} style={{ textDecoration: "none" }}>
+                    <Button
+                      style={{
+                        marginRight: "10px",
+                        backgroundColor: "#DA4E22",
+                      }}
+                    >
+                      <FontAwesomeIcon
+                        icon={faShoppingCart}
+                        style={{ marginRight: "5px", color: "black" }}
+                      />{" "}
+                      Giỏ hàng
+                    </Button>
+                  </Link>
+                </>
+              )}
+
               {isLogin ? (
                 <Dropdown as={"span"}>
                   <Dropdown.Toggle
@@ -108,7 +123,7 @@ const Header = ({ isLogin, setIsLogin }) => {
                 </Dropdown>
               ) : (
                 <>
-                  <a href="/login" style={{ textDecoration: "none" }}>
+                  <Link to="/login" style={{ textDecoration: "none" }}>
                     <Button
                       style={{
                         marginRight: "10px",
@@ -117,8 +132,8 @@ const Header = ({ isLogin, setIsLogin }) => {
                     >
                       Đăng nhập
                     </Button>
-                  </a>
-                  <a href="/dang-ky" style={{ textDecoration: "none" }}>
+                  </Link>
+                  <Link to="/dang-ky" style={{ textDecoration: "none" }}>
                     <Button
                       style={{
                         marginRight: "10px",
@@ -127,7 +142,7 @@ const Header = ({ isLogin, setIsLogin }) => {
                     >
                       Đăng ký
                     </Button>
-                  </a>
+                  </Link>
                 </>
               )}
             </Nav.Item>

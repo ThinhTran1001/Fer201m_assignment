@@ -1,4 +1,7 @@
-import React from "react";
+import axios from "axios";
+import { async } from "q";
+import React, { useState } from "react";
+import { useEffect } from "react";
 import {
   Button,
   Col,
@@ -9,9 +12,29 @@ import {
   Row,
 } from "react-bootstrap";
 
-export default function Footer() {
+export default function Cart({ isLogin }) {
+  let user = JSON.parse(localStorage.getItem("user"));
+
+  const [cart, setCart] = useState([]);
+
+  const fetchCartByUser = async () => {
+    try {
+      const res = await axios.get(
+        `http://localhost:9999/cart?userId=${user.id}`
+      );
+      console.log(res.data);
+      setCart(res.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    fetchCartByUser();
+  }, []);
+
   return (
-    <div>
+    <div style={{ padding: "40px" }}>
       <Container style={{ marginTop: "3rem" }}>
         <Row style={{ marginBottom: "3rem" }}>
           <Col>
@@ -161,7 +184,7 @@ export default function Footer() {
                       backgroundColor: "#F86338",
                     }}
                   >
-                    Danger
+                    Apply
                   </Button>
                 </div>
               </div>

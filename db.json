@@ -39,6 +39,16 @@
       "age": "20",
       "address": "326 cụm 4 thôn 3 xã Thạch Hòa ",
       "role": "CUSTOMER"
+    },
+    {
+      "id": 5,
+      "name": "Van Minh Tuan",
+      "password": "123456",
+      "email": "tuanvmhe173334@fpt.edu.vn",
+      "phone_number": "0346415679",
+      "age": "20",
+      "address": "thôn 5 xã Thạch Hòa ",
+      "role": "CUSTOMER"
     }
   ],
   "product": [
@@ -379,11 +389,12 @@
   "cart": [
     {
       "id": 1,
-      "userId": 2,
+      "userId": 5,
       "item": [
         {
           "id": 1,
           "name": "Iphone 14 promax",
+          "img": "./images/product/iphone14promax.png",
           "price": "26.090.000đ",
           "quantiy": 1
         }
