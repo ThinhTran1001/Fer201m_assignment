@@ -396,7 +396,7 @@
           "name": "Iphone 14 promax",
           "img": "./images/product/iphone14promax.png",
           "price": "26.090.000đ",
-          "quantiy": 1
+          "quantity": 1
         }
       ],
       "total": "26.090.000đ"
@@ -411,6 +411,7 @@
         {
           "id": 1,
           "name": "Iphone 14 promax",
+          "img": "./images/product/iphone14promax.png",
           "price": "26.090.000đ",
           "quantiy": 1
         }
