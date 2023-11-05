@@ -10,42 +10,28 @@ import {
   ProductDetail,
   Register,
 } from "./components";
-import { Link, BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useState } from "react";
 
 function App() {
+  const [isLogin, setIsLogin] = useState(false);
+
   return (
     <Container fluid>
-      <Header />
+      <Header isLogin={isLogin} setIsLogin={setIsLogin} />
       <Router>
-        <ul>
-          <li>
-            <Link to={"/"}>Home</Link>
-          </li>
-          <li>
-            <Link to={"/login"}>Login</Link>
-          </li>
-          <li>
-            <Link to={"/register"}>Register</Link>
-          </li>
-          <li>
-            <Link to={"/cart"}>Cart</Link>
-          </li>
-          <li>
-            <Link to={"/manageuser"}>Manage User</Link>
-          </li>
-          <li>
-            <Link to={"/manageproduct"}>Manage Product</Link>
-          </li>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/product/detail" element={<ProductDetail />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/manageuser" element={<ManageUser />} />
-            <Route path="/manageproduct" element={<ManageProduct />} />
-          </Routes>
-        </ul>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/login"
+            element={<Login isLogin={isLogin} setIsLogin={setIsLogin} />}
+          />
+          <Route path="/register" element={<Register />} />
+          <Route path="/product/detail" element={<ProductDetail />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/manageuser" element={<ManageUser />} />
+          <Route path="/manageproduct" element={<ManageProduct />} />
+        </Routes>
       </Router>
       <Footer />
     </Container>
