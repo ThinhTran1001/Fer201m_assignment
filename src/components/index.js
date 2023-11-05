@@ -7,6 +7,8 @@ import Register from "./Register";
 import ManageProduct from "./Manageproduct";
 import ManageUser from "./Manageuser";
 import ProductDetail from "./ProductDetail";
+import Phone from "./category/Phone";
+import Laptop from "./category/Laptop";
 
 export {
   Cart,
@@ -18,4 +20,6 @@ export {
   ManageUser,
   ProductDetail,
   Register,
+  Phone,
+  Laptop
 };

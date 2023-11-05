@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Col, Container, Row, Card, Button } from "react-bootstrap";
 import axios from "axios";
 
+
 export default function Home() {
   const [product, setProduct] = useState([]);
   useEffect(() => {
@@ -105,7 +106,8 @@ export default function Home() {
           </Col>
         </Row>
         <Row style={{ marginTop: "5px", display: "flex" }}>
-          {product
+          { 
+            product.slice(0,8)
             .filter((p) => p.categoryId === 1)
             .map((filteredProduct) => {
               return (
@@ -247,6 +249,7 @@ export default function Home() {
         <Row style={{ marginTop: "1px", display: "flex" }}>
           {product
             .filter((p) => p.categoryId === 5)
+            .slice(0,8)
             .map((filteredProduct) => {
               return (
                 <Col xs={12} sm={6} md={3} style={{ marginTop: "15px" }}>
@@ -387,6 +390,7 @@ export default function Home() {
         <Row style={{ marginTop: "1px", display: "flex" }}>
           {product
             .filter((p) => p.categoryId === 4)
+            .slice(0,8)
             .map((filteredProduct) => {
               return (
                 <Col xs={12} sm={6} md={3} style={{ marginTop: "15px" }}>
