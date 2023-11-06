@@ -27,7 +27,13 @@ export default function Phone() {
         fetchData();
     }, []);
 
-
+    function formatPrice(price) {
+        price = (price + "").replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    
+        price = price + " VND";
+    
+        return price;
+      }
     const paginate = (pageNumber) => {
         setCurrentPage(pageNumber);
     };
@@ -45,8 +51,8 @@ export default function Phone() {
     const sortProducts = (order) => {
         const sortedProducts = [...filteredSmartphone];
         sortedProducts.sort((a, b) => {
-            const priceA = parseFloat(a.price.replace(/[,.đ]/g, ""));
-            const priceB = parseFloat(b.price.replace(/[,.đ]/g, ""));
+            const priceA = a.price;
+            const priceB = b.price;
             if (order === "asc") {
                 return priceA - priceB;
             } else {
@@ -110,7 +116,7 @@ export default function Phone() {
                                     <Card.Title style={{ textAlign: 'center' }}>{filteredProduct.name}</Card.Title>
                                     <Card.Text>
                                         <Row>
-                                            <Col>{filteredProduct.price}</Col>
+                                            <Col>{formatPrice(filteredProduct.price)}</Col>
                                         </Row>
                                         <Row>
                                             <Col md={6}><Button style={{

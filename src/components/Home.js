@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Col, Container, Row, Card, Button } from "react-bootstrap";
+import { Col, Container, Row, Card, Button, Image } from "react-bootstrap";
 import axios from "axios";
 
 
@@ -18,9 +18,19 @@ export default function Home() {
     fetchData();
   }, []);
 
+  function formatPrice(price) {
+    price = (price + "").replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+    price = price + " VND";
+
+    return price;
+  }
   return (
     <div style={{ marginTop: "25px" }}>
-      <Container>
+      <div>
+        <Image src="./images/product/iphone-14-cover-banner-2.webp" style={{width:'100%', height:'450px'}}></Image>
+      </div>
+      <Container style={{marginTop:'20px'}}>
         <Row>
           <Col md={6}>
             <Button
@@ -126,7 +136,7 @@ export default function Home() {
                       </Card.Title>
                       <Card.Text>
                         <Row>
-                          <Col>{filteredProduct.price}</Col>
+                          <Col>{formatPrice(filteredProduct.price)}</Col>
                         </Row>
                         <Row>
                           <Col md={6}>
@@ -267,7 +277,7 @@ export default function Home() {
                       </Card.Title>
                       <Card.Text>
                         <Row>
-                          <Col>{filteredProduct.price}</Col>
+                          <Col>{formatPrice(filteredProduct.price)}</Col>
                         </Row>
                         <Row>
                           <Col md={6}>
@@ -408,7 +418,7 @@ export default function Home() {
                       </Card.Title>
                       <Card.Text>
                         <Row>
-                          <Col>{filteredProduct.price}</Col>
+                          <Col>{formatPrice(filteredProduct.price)}</Col>
                         </Row>
                         <Row>
                           <Col md={6}>

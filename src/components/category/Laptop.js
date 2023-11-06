@@ -27,7 +27,13 @@ export default function Laptop() {
         fetchData();
     }, []);
 
-
+    function formatPrice(price) {
+        price = (price + "").replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    
+        price = price + " VND";
+    
+        return price;
+      }
     const paginate = (pageNumber) => {
         setCurrentPage(pageNumber);
     };
@@ -110,7 +116,7 @@ export default function Laptop() {
                                     <Card.Title style={{ textAlign: 'center' }}>{filteredProduct.name}</Card.Title>
                                     <Card.Text>
                                         <Row>
-                                            <Col>{filteredProduct.price}</Col>
+                                            <Col>{formatPrice(filteredProduct.price)}</Col>
                                         </Row>
                                         <Row>
                                             <Col md={6}><Button style={{
