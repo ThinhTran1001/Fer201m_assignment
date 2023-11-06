@@ -143,7 +143,7 @@ const Header = ({ isLogin, setIsLogin }) => {
                       Đăng nhập
                     </Button>
                   </Link>
-                  <Link to="/dang-ky" style={{ textDecoration: "none" }}>
+                  <Link to="/register" style={{ textDecoration: "none" }}>
                     <Button
                       style={{
                         marginRight: "10px",

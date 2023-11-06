@@ -9,6 +9,8 @@ import {
   ManageUser,
   ProductDetail,
   Register,
+  Phone,
+  Laptop
 } from "./components";
 import {
   BrowserRouter as Router,
@@ -49,6 +51,8 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/manageuser" element={<ManageUser />} />
             <Route path="/manageproduct" element={<ManageProduct />} />
+            <Route path="/dien-thoai" element={<Phone/>}/>
+            <Route path="/laptop" element={<Laptop/>}/>
           </Route>
         </Routes>
       </Router>

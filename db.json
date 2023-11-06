@@ -146,7 +146,7 @@
       "img": "./images/product/msigamingcyborg15.png",
       "detail": "may sieu dep sieu nhanh",
       "categoryId": 5,
-      "brandId": 1,
+      "brandId": 9,
       "price": "27.190.000đ",
       "quantity": "31",
       "status": true
@@ -157,7 +157,7 @@
       "img": "./images/product/05-fx506p-l_transparent.png",
       "detail": "may sieu dep sieu nhanh",
       "categoryId": 5,
-      "brandId": 1,
+      "brandId": 6,
       "price": "19.990.000",
       "quantity": "31",
       "status": true
@@ -168,7 +168,7 @@
       "img": "./images/product/msigaminggf63thin11.png",
       "detail": "may sieu dep sieu nhanh",
       "categoryId": 5,
-      "brandId": 1,
+      "brandId": 9,
       "price": "16.490.000đ",
       "quantity": "31",
       "status": true
@@ -179,7 +179,7 @@
       "img": "./images/product/acergamingnitrotigeran515.png",
       "detail": "may sieu dep sieu nhanh",
       "categoryId": 5,
-      "brandId": 1,
+      "brandId": 7,
       "price": "31.750.000đ",
       "quantity": "31",
       "status": true
@@ -190,7 +190,7 @@
       "img": "./images/product/asustufgamingf15fx507.png",
       "detail": "may sieu dep sieu nhanh",
       "categoryId": 5,
-      "brandId": 1,
+      "brandId": 6,
       "price": "22.990.000đ",
       "quantity": "31",
       "status": true
@@ -201,7 +201,7 @@
       "img": "./images/product/hpgamingvictus16.png",
       "detail": "may sieu dep sieu nhanh",
       "categoryId": 5,
-      "brandId": 1,
+      "brandId": 8,
       "price": "27.990.000đ",
       "quantity": "31",
       "status": true
@@ -212,7 +212,7 @@
       "img": "./images/product/text_ng_n_2__3_24_transparent.png",
       "detail": "may sieu dep sieu nhanh",
       "categoryId": 5,
-      "brandId": 1,
+      "brandId": 6,
       "price": "23.990.000đ",
       "quantity": "31",
       "status": true
@@ -223,7 +223,7 @@
       "img": "./images/product/asusaspire7_transparent.png",
       "detail": "may sieu dep sieu nhanh",
       "categoryId": 5,
-      "brandId": 1,
+      "brandId": 7,
       "price": "21.990.000đ",
       "quantity": "31",
       "status": true
@@ -315,6 +315,215 @@
       "price": "4.390.000đ",
       "quantity": "31",
       "status": true
+    },
+    {
+      "id": 25,
+      "name": "Samsung Galaxy S25",
+      "img": "./images/product/samsung-galaxy-s25.png",
+      "detail": "máy siêu đẹp siêu nhanh",
+      "categoryId": 1,
+      "brandId": 2,
+      "price": "27.990.000đ",
+      "quantity": "29",
+      "status": true
+    },
+    {
+      "id": 26,
+      "name": "Samsung Galaxy S25",
+      "img": "./images/product/samsung-galaxy-s25.png",
+      "detail": "máy siêu đẹp siêu nhanh",
+      "categoryId": 1,
+      "brandId": 2,
+      "price": "27.990.000đ",
+      "quantity": "29",
+      "status": true
+    },
+    {
+      "id": 27,
+      "name": "Samsung Galaxy S25",
+      "img": "./images/product/samsung-galaxy-s25.png",
+      "detail": "máy siêu đẹp siêu nhanh",
+      "categoryId": 1,
+      "brandId": 3,
+      "price": "27.990.000đ",
+      "quantity": "29",
+      "status": true
+    },
+    {
+      "id": 28,
+      "name": "Samsung Galaxy S25",
+      "img": "./images/product/samsung-galaxy-s25.png",
+      "detail": "máy siêu đẹp siêu nhanh",
+      "categoryId": 1,
+      "brandId": 3,
+      "price": "27.990.000đ",
+      "quantity": "29",
+      "status": true
+    },
+    {
+      "id": 29,
+      "name": "Samsung Galaxy S25",
+      "img": "./images/product/samsung-galaxy-s25.png",
+      "detail": "máy siêu đẹp siêu nhanh",
+      "categoryId": 1,
+      "brandId": 2,
+      "price": "27.990.000đ",
+      "quantity": "29",
+      "status": true
+    },
+    {
+      "id": 30,
+      "name": "Samsung Galaxy S25",
+      "img": "./images/product/samsung-galaxy-s25.png",
+      "detail": "máy siêu đẹp siêu nhanh",
+      "categoryId": 1,
+      "brandId": 2,
+      "price": "27.990.000đ",
+      "quantity": "29",
+      "status": true
+    },
+    {
+      "id": 31,
+      "name": "Samsung Galaxy S25",
+      "img": "./images/product/samsung-galaxy-s25.png",
+      "detail": "máy siêu đẹp siêu nhanh",
+      "categoryId": 1,
+      "brandId": 2,
+      "price": "27.990.000đ",
+      "quantity": "29",
+      "status": true
+    },
+    {
+      "id": 32,
+      "name": "Samsung Galaxy S25",
+      "img": "./images/product/samsung-galaxy-s25.png",
+      "detail": "máy siêu đẹp siêu nhanh",
+      "categoryId": 1,
+      "brandId": 2,
+      "price": "27.990.000đ",
+      "quantity": "29",
+      "status": true
+    },
+    {
+      "id": 33,
+      "name": "Samsung Galaxy S25",
+      "img": "./images/product/samsung-galaxy-s25.png",
+      "detail": "máy siêu đẹp siêu nhanh",
+      "categoryId": 1,
+      "brandId": 2,
+      "price": "27.990.000đ",
+      "quantity": "29",
+      "status": true
+    },
+    {
+      "id": 34,
+      "name": "Samsung Galaxy S25",
+      "img": "./images/product/samsung-galaxy-s25.png",
+      "detail": "máy siêu đẹp siêu nhanh",
+      "categoryId": 1,
+      "brandId": 2,
+      "price": "27.990.000đ",
+      "quantity": "29",
+      "status": true
+    },
+    {
+      "id": 35,
+      "name": "Samsung Galaxy S25",
+      "img": "./images/product/samsung-galaxy-s25.png",
+      "detail": "máy siêu đẹp siêu nhanh",
+      "categoryId": 1,
+      "brandId": 2,
+      "price": "27.990.000đ",
+      "quantity": "29",
+      "status": true
+    },
+    {
+      "id": 36,
+      "name": "Samsung Galaxy S25",
+      "img": "./images/product/samsung-galaxy-s25.png",
+      "detail": "máy siêu đẹp siêu nhanh",
+      "categoryId": 1,
+      "brandId": 2,
+      "price": "27.990.000đ",
+      "quantity": "29",
+      "status": true
+    },
+    {
+      "id": 37,
+      "name": "Samsung Galaxy S25",
+      "img": "./images/product/samsung-galaxy-s25.png",
+      "detail": "máy siêu đẹp siêu nhanh",
+      "categoryId": 1,
+      "brandId": 2,
+      "price": "27.990.000đ",
+      "quantity": "29",
+      "status": true
+    },
+    {
+      "id": 38,
+      "name": "Samsung Galaxy S25",
+      "img": "./images/product/samsung-galaxy-s25.png",
+      "detail": "máy siêu đẹp siêu nhanh",
+      "categoryId": 1,
+      "brandId": 2,
+      "price": "27.990.000đ",
+      "quantity": "29",
+      "status": true
+    },
+    {
+      "id": 39,
+      "name": "Samsung Galaxy S25",
+      "img": "./images/product/samsung-galaxy-s25.png",
+      "detail": "máy siêu đẹp siêu nhanh",
+      "categoryId": 1,
+      "brandId": 2,
+      "price": "27.990.000đ",
+      "quantity": "29",
+      "status": true
+    },
+    {
+      "id": 40,
+      "name": "Samsung Galaxy S25",
+      "img": "./images/product/samsung-galaxy-s25.png",
+      "detail": "máy siêu đẹp siêu nhanh",
+      "categoryId": 1,
+      "brandId": 2,
+      "price": "27.990.000đ",
+      "quantity": "29",
+      "status": true
+    },
+    {
+      "id": 41,
+      "name": "Samsung Galaxy S25",
+      "img": "./images/product/samsung-galaxy-s25.png",
+      "detail": "máy siêu đẹp siêu nhanh",
+      "categoryId": 1,
+      "brandId": 2,
+      "price": "27.990.000đ",
+      "quantity": "29",
+      "status": true
+    },
+    {
+      "id": 42,
+      "name": "Samsung Galaxy S25",
+      "img": "./images/product/samsung-galaxy-s25.png",
+      "detail": "máy siêu đẹp siêu nhanh",
+      "categoryId": 1,
+      "brandId": 2,
+      "price": "27.990.000đ",
+      "quantity": "29",
+      "status": true
+    },
+    {
+      "id": 43,
+      "name": "Samsung Galaxy S25",
+      "img": "./images/product/samsung-galaxy-s25.png",
+      "detail": "máy siêu đẹp siêu nhanh",
+      "categoryId": 1,
+      "brandId": 2,
+      "price": "27.990.000đ",
+      "quantity": "29",
+      "status": true
     }
   ],
   "brand": [
@@ -334,27 +543,37 @@
       "Status": true
     },
     {
-      "id": 4,
+      "id":4,
+      "name":"Xiaomi",
+      "Status":true
+    },
+    {
+      "id":5,
+      "name":"Redmi",
+      "Status":true
+    },
+    {
+      "id": 6,
       "name": "ASUS",
       "Status": true
     },
     {
-      "id": 5,
+      "id": 7,
       "name": "Acer",
       "Status": true
     },
     {
-      "id": 6,
+      "id": 8,
       "name": "HP",
       "Status": true
     },
     {
-      "id": 7,
+      "id": 9,
       "name": "MSI",
       "Status": true
     },
     {
-      "id": 8,
+      "id": 10,
       "name": "Lenvo",
       "Status": true
     }
@@ -378,11 +597,6 @@
     {
       "id": 4,
       "name": "tablet",
-      "status": true
-    },
-    {
-      "id": 5,
-      "name": "laptop gaming",
       "status": true
     }
   ],
