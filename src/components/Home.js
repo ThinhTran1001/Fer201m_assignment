@@ -5,6 +5,8 @@ import axios from "axios";
 
 export default function Home() {
   const [product, setProduct] = useState([]);
+
+  const handleAddProductToCart = (product) => {};
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -161,6 +163,7 @@ export default function Home() {
                                 fontSize: "14px",
                               }}
                               variant="outline-warning"
+                              onClick={handleAddProductToCart(filteredProduct)}
                             >
                               Add To Cart
                             </Button>
