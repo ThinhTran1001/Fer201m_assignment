@@ -36,6 +36,14 @@ export default function Cart() {
     fetchCartByUser();
   }, []);
 
+  function formatPrice(price) {
+    price = (price + "").replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+    price = price + " VND";
+
+    return price;
+  }
+
   return (
     <div style={{ padding: "40px" }}>
       <Container style={{ marginTop: "3rem" }}>
@@ -65,8 +73,8 @@ export default function Cart() {
                         </Col>
                       </Row>
                       <Row style={{ marginTop: "4.5rem" }}>
-                        <Col>
-                          <h4>{item.price}</h4>
+                        <Col md={6}>
+                          <h4>{formatPrice(item.price)}</h4>
                         </Col>
                         <Col>
                           <Image
