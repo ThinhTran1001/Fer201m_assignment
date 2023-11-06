@@ -119,7 +119,7 @@ const Header = ({ isLogin, setIsLogin }) => {
                     <Dropdown.Item onClick={handleLogout}>
                       Log Out
                     </Dropdown.Item>
-                  </Dropdown.Menu>
+                  </Dropdown.Menu>  
                 </Dropdown>
               ) : (
                 <>

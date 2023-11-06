@@ -10,7 +10,7 @@ import {
   ProductDetail,
   Register,
   Phone,
-  Laptop
+  Laptop,
 } from "./components";
 import {
   BrowserRouter as Router,
@@ -24,6 +24,10 @@ function App() {
   const [isLogin, setIsLogin] = useState(false);
 
   useEffect(() => {
+    let user = JSON.parse(localStorage.getItem("user"));
+    if (user) {
+      setIsLogin(true);
+    }
     console.log("Reload");
   }, []);
 
@@ -51,8 +55,8 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/manageuser" element={<ManageUser />} />
             <Route path="/manageproduct" element={<ManageProduct />} />
-            <Route path="/dien-thoai" element={<Phone/>}/>
-            <Route path="/laptop" element={<Laptop/>}/>
+            <Route path="/dien-thoai" element={<Phone />} />
+            <Route path="/laptop" element={<Laptop />} />
           </Route>
         </Routes>
       </Router>
