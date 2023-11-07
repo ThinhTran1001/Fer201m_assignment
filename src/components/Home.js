@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Col, Container, Row, Card, Button, Image } from "react-bootstrap";
-import CloseIcon from "@mui/icons-material/Close";
 import axios from "axios";
 
+import CloseIcon from "@mui/icons-material/Close";
 import { Snackbar, SnackbarContent, IconButton } from "@mui/material";
 
 export default function Home() {

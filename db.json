@@ -604,16 +604,8 @@
     {
       "id": 1,
       "userId": 5,
-      "item": [
-        {
-          "id": 1,
-          "name": "Iphone 14 promax",
-          "img": "./images/product/iphone14promax.png",
-          "price": 26090000,
-          "quantity": 1
-        }
-      ],
-      "total": 26090000
+      "item": [],
+      "total": 0
     },
     {
       "userId": 2,
@@ -645,13 +637,13 @@
           "id": 1,
           "name": "Iphone 14 promax",
           "img": "./images/product/iphone14promax.png",
-          "price": "26.090.000đ",
+          "price": "26.090.000 VND",
           "quantiy": 1
         }
       ],
       "address": "97 Vườn Đào",
       "shipping": "free ship",
-      "total": "26.090.000đ",
+      "total": "26.090.000 VND",
       "status": "pending"
     }
   ]
