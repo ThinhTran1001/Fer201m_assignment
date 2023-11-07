@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Col, Container, Row, Card, Button, Image } from "react-bootstrap";
 import axios from "axios";
+
+import CloseIcon from "@mui/icons-material/Close";
+
+import { Snackbar, SnackbarContent, IconButton } from "@mui/material";
 import { Link } from "react-router-dom";
-import { async } from "q";
 
 export default function Home() {
   const [product, setProduct] = useState([]);
@@ -12,6 +15,18 @@ export default function Home() {
   const [cart, setCart] = useState([]);
   const [cartItem, setCartItem] = useState([]);
 
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState("");
+
+  const showSnackbar = (message) => {
+    setSnackbarMessage(message);
+    setSnackbarOpen(true);
+  };
+
+  const closeSnackbar = () => {
+    setSnackbarOpen(false);
+  };
+
   const [cartItemForm, setCartItemForm] = useState({
     name: "",
     img: "",
@@ -19,14 +34,27 @@ export default function Home() {
     quantity: 0,
   });
 
+  const calculateTotal = (items) => {
+    let total = 0;
+    for (const item of items) {
+      total += item.price * item.quantity;
+    }
+    return total;
+  };
+
   const fetchCartByUser = async () => {
     try {
       const res = await axios.get(
         `http://localhost:9999/cart?userId=${user.id}`
       );
-      console.log(res.data[0]);
-      setCart(res.data[0]);
-      setCartItem(res.data[0].item);
+      const fetchedCart = res.data[0];
+
+      // Calculate the total for the fetched cart
+      const fetchedTotal = calculateTotal(fetchedCart.item);
+      fetchedCart.total = formatPrice(fetchedTotal);
+
+      setCart(fetchedCart);
+      setCartItem(fetchedCart.item);
     } catch (err) {
       console.log(err);
     }
@@ -35,28 +63,6 @@ export default function Home() {
   useEffect(() => {
     fetchCartByUser();
   }, []);
-
-  // const handleAddProductToCart = async (product) => {
-  //   setCartItemForm({
-  //     ...cartItemForm,
-  //     name: product.name,
-  //     quantity:
-  //       cartItemForm.name === product.name ? cartItemForm.quantity + 1 : 1,
-  //     price: product.price,
-  //     img: product.img,
-  //   });
-  //   if (!cart) {
-  //     try {
-  //       await axios.post(`http://localhost:9999/cart`, {
-  //         userId: user.id,
-  //         item: [cartItemForm],
-  //         total: "26.090.000đ",
-  //       });
-  //     } catch (err) {
-  //       console.log(err);
-  //     }
-  //   }
-  // };
 
   const handleAddProductToCart = async (product) => {
     if (cart) {
@@ -82,10 +88,15 @@ export default function Home() {
 
       updatedCart.item = updatedItem;
 
+      // Calculate the total
+      const updatedTotal = calculateTotal(updatedItem);
+      updatedCart.total = formatPrice(updatedTotal);
+
       try {
         await axios.put(`http://localhost:9999/cart/${cart.id}`, updatedCart);
         setCart(updatedCart);
         setCartItem(updatedItem);
+        showSnackbar("Sản phẩm đã được thêm vào giỏ hàng 🛒.");
       } catch (err) {
         console.log(err);
       }
@@ -102,7 +113,7 @@ export default function Home() {
               img: product.img,
             },
           ],
-          total: "26.090.000đ",
+          total: product.price,
         };
         const response = await axios.post(
           `http://localhost:9999/cart`,
@@ -110,6 +121,7 @@ export default function Home() {
         );
         setCart(response.data);
         setCartItem(newCart.item);
+        showSnackbar("Sản phẩm đã được thêm vào giỏ hàng 🛒.");
       } catch (err) {
         console.log(err);
       }
@@ -138,10 +150,36 @@ export default function Home() {
   }
   return (
     <div style={{ marginTop: "25px" }}>
+      {/* Snackbar start */}
+      <Snackbar
+        anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+        open={snackbarOpen}
+        autoHideDuration={5000}
+        onClose={closeSnackbar}
+      >
+        <SnackbarContent
+          message={snackbarMessage}
+          action={
+            <IconButton size="small" color="inherit" onClick={closeSnackbar}>
+              <CloseIcon fontSize="small" />
+            </IconButton>
+          }
+          style={{
+            backgroundColor: "#4E9A51",
+            color: "#fff",
+            fontWeight: "bold",
+          }}
+        />
+      </Snackbar>
+
+      {/* Snackbar end */}
       <div>
-        <Image src="./images/product/iphone-14-cover-banner-2.webp" style={{width:'100%', height:'450px'}}></Image>
+        <Image
+          src="./images/product/iphone-14-cover-banner-2.webp"
+          style={{ width: "100%", height: "450px" }}
+        ></Image>
       </div>
-      <Container style={{marginTop:'20px'}}>
+      <Container style={{ marginTop: "20px" }}>
         <Row>
           <Col md={6}>
             <Button
@@ -251,18 +289,18 @@ export default function Home() {
                         </Row>
                         <Row>
                           <Col md={6}>
-                          <Link to={`/product/detail/${filteredProduct.id}`}>
-                            <Button
-                              style={{
-                                backgroundColor: "rgb(220, 100, 11)",
-                                color: "white",
-                                fontWeight: "bolder",
-                                fontSize: "14px",
-                              }}
-                              variant="outline-warning"
-                            >
-                              Detail
-                            </Button>
+                            <Link to={`/product/detail/${filteredProduct.id}`}>
+                              <Button
+                                style={{
+                                  backgroundColor: "rgb(220, 100, 11)",
+                                  color: "white",
+                                  fontWeight: "bolder",
+                                  fontSize: "14px",
+                                }}
+                                variant="outline-warning"
+                              >
+                                Detail
+                              </Button>
                             </Link>
                           </Col>
                           <Col md={6}>
@@ -398,17 +436,17 @@ export default function Home() {
                         <Row>
                           <Col md={6}>
                             <Link to={`/product/detail/${filteredProduct.id}`}>
-                            <Button
-                              style={{
-                                backgroundColor: "rgb(220, 100, 11)",
-                                color: "white",
-                                fontWeight: "bolder",
-                                fontSize: "14px",
-                              }}
-                              variant="outline-warning"
-                            >
-                              Detail
-                            </Button>
+                              <Button
+                                style={{
+                                  backgroundColor: "rgb(220, 100, 11)",
+                                  color: "white",
+                                  fontWeight: "bolder",
+                                  fontSize: "14px",
+                                }}
+                                variant="outline-warning"
+                              >
+                                Detail
+                              </Button>
                             </Link>
                           </Col>
                           <Col md={6}>
@@ -540,18 +578,18 @@ export default function Home() {
                         </Row>
                         <Row>
                           <Col md={6}>
-                          <Link to={`/product/detail/${filteredProduct.id}`}>
-                            <Button
-                              style={{
-                                backgroundColor: "rgb(220, 100, 11)",
-                                color: "white",
-                                fontWeight: "bolder",
-                                fontSize: "14px",
-                              }}
-                              variant="outline-warning"
-                            >
-                              Detail
-                            </Button>
+                            <Link to={`/product/detail/${filteredProduct.id}`}>
+                              <Button
+                                style={{
+                                  backgroundColor: "rgb(220, 100, 11)",
+                                  color: "white",
+                                  fontWeight: "bolder",
+                                  fontSize: "14px",
+                                }}
+                                variant="outline-warning"
+                              >
+                                Detail
+                              </Button>
                             </Link>
                           </Col>
                           <Col md={6}>

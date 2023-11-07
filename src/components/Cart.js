@@ -13,11 +13,26 @@ import {
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
+import CloseIcon from "@mui/icons-material/Close";
+import { Snackbar, SnackbarContent, IconButton } from "@mui/material";
+
 export default function Cart() {
   let user = JSON.parse(localStorage.getItem("user"));
 
   const [cart, setCart] = useState([]);
   const [cartItem, setCartItem] = useState([]);
+
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState("");
+
+  const showSnackbar = (message) => {
+    setSnackbarMessage(message);
+    setSnackbarOpen(true);
+  };
+
+  const closeSnackbar = () => {
+    setSnackbarOpen(false);
+  };
 
   const fetchCartByUser = async () => {
     try {
@@ -32,12 +47,77 @@ export default function Cart() {
     }
   };
 
+  const handleDeleteItemFromCart = async (item) => {
+    console.log("Delete item from cart");
+
+    try {
+      const updatedCart = cartItem.filter(
+        (cartItem) => cartItem.name !== item.name
+      );
+
+      const updatedTotal = updatedCart.reduce((acc, currentItem) => {
+        return formatPrice(acc + currentItem.price * currentItem.quantity);
+      }, 0);
+
+      const updatedCartData = {
+        ...cart,
+        item: updatedCart,
+        total: updatedTotal,
+      };
+
+      // Gửi yêu cầu cập nhật giỏ hàng trong cơ sở dữ liệu
+
+      await axios.put(`http://localhost:9999/cart/${cart.id}`, updatedCartData);
+
+      showSnackbar(
+        `Sản phẩm ${item.name} đã được xoá khỏi giỏ hàng của bạn ⛔.`
+      );
+      setCartItem(updatedCart);
+      setCart({ ...cart, total: updatedTotal });
+
+      setTimeout(() => {
+        window.location.reload();
+      }, 3000);
+    } catch (err) {}
+  };
+
   useEffect(() => {
     fetchCartByUser();
   }, []);
 
+  function formatPrice(price) {
+    price = (price + "").replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+    price = price + " VND";
+
+    return price;
+  }
+
   return (
     <div style={{ padding: "40px" }}>
+      {/* Snackbar start */}
+      <Snackbar
+        anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+        open={snackbarOpen}
+        autoHideDuration={5000}
+        onClose={closeSnackbar}
+      >
+        <SnackbarContent
+          message={snackbarMessage}
+          action={
+            <IconButton size="small" color="inherit" onClick={closeSnackbar}>
+              <CloseIcon fontSize="small" />
+            </IconButton>
+          }
+          style={{
+            backgroundColor: "#4E9A51",
+            color: "#fff",
+            fontWeight: "bold",
+          }}
+        />
+      </Snackbar>
+
+      {/* Snackbar end */}
       <Container style={{ marginTop: "3rem" }}>
         {cart ? (
           <>
@@ -50,7 +130,7 @@ export default function Cart() {
               {/* Left Phone Detail */}
               <Col>
                 {cartItem.map((item) => (
-                  <Row style={{ marginBottom: "5rem" }}>
+                  <Row style={{ marginBottom: "5rem" }} key={item.name}>
                     <Col xs={6} md={4}>
                       <Image src={item.img} thumbnail />
                     </Col>
@@ -65,15 +145,17 @@ export default function Cart() {
                         </Col>
                       </Row>
                       <Row style={{ marginTop: "4.5rem" }}>
-                        <Col>
-                          <h4>{item.price}</h4>
+                        <Col md={6}>
+                          <h4>{formatPrice(item.price)}</h4>
                         </Col>
                         <Col>
                           <Image
+                            onClick={() => handleDeleteItemFromCart(item)}
                             src="./images/cart/button.svg"
                             style={{
                               borderRadius: "8px",
                               height: " 2.2rem",
+                              cursor: "pointer",
                             }}
                           ></Image>
                         </Col>

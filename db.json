@@ -604,36 +604,26 @@
     {
       "id": 1,
       "userId": 5,
-      "item": [
-        {
-          "id": 1,
-          "name": "Iphone 14 promax",
-          "img": "./images/product/iphone14promax.png",
-          "price": 26090000,
-          "quantity": 1
-        }
-      ],
-      "total": 26090000
+      "item": [],
+      "total": 0
     },
     {
       "userId": 2,
       "item": [
         {
           "name": "Iphone 14 Pro Max",
-          "quantity": 2,
-          "price": 26.09,
-          "img": "./images/product/iphone14promax.png",
-          "total": 26.09
+          "quantity": 8,
+          "price": 26090000,
+          "img": "./images/product/iphone14promax.png"
         },
         {
           "name": "Iphone 13 Pro Max",
-          "quantity": 1,
-          "price": 23.09,
-          "img": "./images/product/iphone13promax.png",
-          "total": 23.09
+          "quantity": 2,
+          "price": 23090000,
+          "img": "./images/product/iphone13promax.png"
         }
       ],
-      "total": 49.18,
+      "total": "254.900.000 VND",
       "id": 2
     }
   ],
@@ -647,13 +637,13 @@
           "id": 1,
           "name": "Iphone 14 promax",
           "img": "./images/product/iphone14promax.png",
-          "price": "26.090.000đ",
+          "price": "26.090.000 VND",
           "quantiy": 1
         }
       ],
       "address": "97 Vườn Đào",
       "shipping": "free ship",
-      "total": "26.090.000đ",
+      "total": "26.090.000 VND",
       "status": "pending"
     }
   ]
