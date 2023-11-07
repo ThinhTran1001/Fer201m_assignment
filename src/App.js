@@ -19,6 +19,7 @@ import {
   Outlet,
 } from "react-router-dom";
 import { useEffect, useState } from "react";
+import OrderTracking from "./components/OrderTracking";
 
 function App() {
   const [isLogin, setIsLogin] = useState(false);
@@ -57,6 +58,7 @@ function App() {
             <Route path="/manageproduct" element={<ManageProduct />} />
             <Route path="/dien-thoai" element={<Phone />} />
             <Route path="/laptop" element={<Laptop />} />
+            <Route path="/order-tracking" element={<OrderTracking />} />
           </Route>
         </Routes>
       </Router>

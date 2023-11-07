@@ -66,10 +66,7 @@ const Header = ({ isLogin, setIsLogin }) => {
             >
               {isLogin && (
                 <>
-                  <Link
-                    to="/tra-cuu-don-hang"
-                    style={{ textDecoration: "none" }}
-                  >
+                  <Link to="/order-tracking" style={{ textDecoration: "none" }}>
                     <Button
                       style={{
                         marginRight: "10px",
@@ -119,7 +116,7 @@ const Header = ({ isLogin, setIsLogin }) => {
                     <Dropdown.Item onClick={handleLogout}>
                       Log Out
                     </Dropdown.Item>
-                  </Dropdown.Menu>  
+                  </Dropdown.Menu>
                 </Dropdown>
               ) : (
                 <>

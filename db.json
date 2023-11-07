@@ -605,25 +605,12 @@
       "id": 1,
       "userId": 5,
       "item": [],
-      "total": 0
+      "total": "0"
     },
     {
       "userId": 2,
-      "item": [
-        {
-          "name": "Iphone 14 Pro Max",
-          "quantity": 8,
-          "price": 26090000,
-          "img": "./images/product/iphone14promax.png"
-        },
-        {
-          "name": "Iphone 13 Pro Max",
-          "quantity": 2,
-          "price": 23090000,
-          "img": "./images/product/iphone13promax.png"
-        }
-      ],
-      "total": "254.900.000 VND",
+      "item": [],
+      "total": "0",
       "id": 2
     }
   ],
@@ -631,20 +618,65 @@
     {
       "id": 1,
       "userId": 2,
-      "orderAt": "Mon Oct 30 2023 13:05:17 GMT+0700",
+      "orderAt": "05/11/2023",
       "item": [
         {
-          "id": 1,
-          "name": "Iphone 14 promax",
-          "img": "./images/product/iphone14promax.png",
-          "price": "26.090.000 VND",
-          "quantiy": 1
+          "name": "Iphone 14 Pro Max",
+          "quantity": 1,
+          "price": 26090000,
+          "img": "./images/product/iphone14promax.png"
         }
       ],
       "address": "97 Vườn Đào",
       "shipping": "free ship",
       "total": "26.090.000 VND",
-      "status": "pending"
+      "status": "Ordered"
+    },
+    {
+      "userId": 2,
+      "item": [
+        {
+          "name": "Iphone 13 Pro Max",
+          "quantity": 1,
+          "price": 23090000,
+          "img": "./images/product/iphone13promax.png"
+        },
+        {
+          "name": "Iphone 12 Pro Max",
+          "quantity": 4,
+          "price": 16090000,
+          "img": "./images/product/iphone12promax.png"
+        }
+      ],
+      "total": "87.450.000 VND",
+      "address": "97 Vườn Đào",
+      "shipping": 0,
+      "status": "Ordered",
+      "orderAt": "08/11/2023",
+      "id": 2
+    },
+    {
+      "userId": 5,
+      "item": [
+        {
+          "name": "Iphone 13 Pro Max",
+          "quantity": 1,
+          "price": 23090000,
+          "img": "./images/product/iphone13promax.png"
+        },
+        {
+          "name": "Iphone 12 Pro Max",
+          "quantity": 1,
+          "price": 16090000,
+          "img": "./images/product/iphone12promax.png"
+        }
+      ],
+      "total": "39.180.000 VND",
+      "address": "thôn 5 xã Thạch Hòa ",
+      "shipping": 0,
+      "status": "Ordered",
+      "orderAt": "08/11/2023",
+      "id": 3
     }
   ]
 }
