@@ -15,9 +15,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 const Header = ({ isLogin, setIsLogin }) => {
-  const navigate = useNavigate();
   let user;
   if (isLogin) {
     user = JSON.parse(localStorage.getItem("user"));
@@ -26,7 +25,7 @@ const Header = ({ isLogin, setIsLogin }) => {
   const handleLogout = () => {
     setIsLogin(false);
     localStorage.removeItem("user");
-    navigate("/");
+    window.location.reload();
   };
   return (
     <>
@@ -41,22 +40,13 @@ const Header = ({ isLogin, setIsLogin }) => {
         <Container>
           <Nav className="justify-content-start">
             <Nav.Item>
-              <Nav.Link>
-                <Link
-                  to={"/"}
-                  style={{
-                    color: "white",
-                    fontSize: "30px",
-                    textDecoration: "none",
-                  }}
-                >
-                  JSPhone
-                  <img
-                    src={logo}
-                    style={{ width: "30px", height: "30px", margin: "10px" }}
-                    alt="logo"
-                  />
-                </Link>
+              <Nav.Link href="/" style={{ color: "white", fontSize: "30px" }}>
+                JSPhone
+                <img
+                  src={logo}
+                  style={{ width: "30px", height: "30px", margin: "10px" }}
+                  alt="logo"
+                />
               </Nav.Link>
             </Nav.Item>
             <Nav.Item
@@ -129,7 +119,7 @@ const Header = ({ isLogin, setIsLogin }) => {
                     <Dropdown.Item onClick={handleLogout}>
                       Log Out
                     </Dropdown.Item>
-                  </Dropdown.Menu>
+                  </Dropdown.Menu>  
                 </Dropdown>
               ) : (
                 <>

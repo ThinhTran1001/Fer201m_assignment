@@ -51,7 +51,7 @@ function App() {
               element={<Login isLogin={isLogin} setIsLogin={setIsLogin} />}
             />
             <Route path="/register" element={<Register />} />
-            <Route path="/product/detail" element={<ProductDetail />} />
+            <Route path="/product/detail/:id" element={<ProductDetail />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/manageuser" element={<ManageUser />} />
             <Route path="/manageproduct" element={<ManageProduct />} />

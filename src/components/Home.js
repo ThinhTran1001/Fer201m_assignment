@@ -3,7 +3,9 @@ import { Col, Container, Row, Card, Button, Image } from "react-bootstrap";
 import axios from "axios";
 
 import CloseIcon from "@mui/icons-material/Close";
+
 import { Snackbar, SnackbarContent, IconButton } from "@mui/material";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const [product, setProduct] = useState([]);
@@ -287,17 +289,19 @@ export default function Home() {
                         </Row>
                         <Row>
                           <Col md={6}>
-                            <Button
-                              style={{
-                                backgroundColor: "rgb(220, 100, 11)",
-                                color: "white",
-                                fontWeight: "bolder",
-                                fontSize: "14px",
-                              }}
-                              variant="outline-warning"
-                            >
-                              Detail
-                            </Button>
+                            <Link to={`/product/detail/${filteredProduct.id}`}>
+                              <Button
+                                style={{
+                                  backgroundColor: "rgb(220, 100, 11)",
+                                  color: "white",
+                                  fontWeight: "bolder",
+                                  fontSize: "14px",
+                                }}
+                                variant="outline-warning"
+                              >
+                                Detail
+                              </Button>
+                            </Link>
                           </Col>
                           <Col md={6}>
                             <Button
@@ -431,17 +435,19 @@ export default function Home() {
                         </Row>
                         <Row>
                           <Col md={6}>
-                            <Button
-                              style={{
-                                backgroundColor: "rgb(220, 100, 11)",
-                                color: "white",
-                                fontWeight: "bolder",
-                                fontSize: "14px",
-                              }}
-                              variant="outline-warning"
-                            >
-                              Detail
-                            </Button>
+                            <Link to={`/product/detail/${filteredProduct.id}`}>
+                              <Button
+                                style={{
+                                  backgroundColor: "rgb(220, 100, 11)",
+                                  color: "white",
+                                  fontWeight: "bolder",
+                                  fontSize: "14px",
+                                }}
+                                variant="outline-warning"
+                              >
+                                Detail
+                              </Button>
+                            </Link>
                           </Col>
                           <Col md={6}>
                             <Button
@@ -572,17 +578,19 @@ export default function Home() {
                         </Row>
                         <Row>
                           <Col md={6}>
-                            <Button
-                              style={{
-                                backgroundColor: "rgb(220, 100, 11)",
-                                color: "white",
-                                fontWeight: "bolder",
-                                fontSize: "14px",
-                              }}
-                              variant="outline-warning"
-                            >
-                              Detail
-                            </Button>
+                            <Link to={`/product/detail/${filteredProduct.id}`}>
+                              <Button
+                                style={{
+                                  backgroundColor: "rgb(220, 100, 11)",
+                                  color: "white",
+                                  fontWeight: "bolder",
+                                  fontSize: "14px",
+                                }}
+                                variant="outline-warning"
+                              >
+                                Detail
+                              </Button>
+                            </Link>
                           </Col>
                           <Col md={6}>
                             <Button

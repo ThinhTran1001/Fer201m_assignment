@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Col, Container, Row, Card, Button } from 'react-bootstrap';
 import axios from 'axios';
+import { Link } from 'react-router-dom'
 
 export default function Phone() {
     const [smartphone, setSmartphone] = useState([]);
@@ -29,11 +30,11 @@ export default function Phone() {
 
     function formatPrice(price) {
         price = (price + "").replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-    
+
         price = price + " VND";
-    
+
         return price;
-      }
+    }
     const paginate = (pageNumber) => {
         setCurrentPage(pageNumber);
     };
@@ -93,7 +94,7 @@ export default function Phone() {
                         </Col>
                     ))}
                 </Row>
-                <div style={{marginTop:'30px'}}>
+                <div style={{ marginTop: '30px' }}>
                     <Button onClick={() => sortProducts("asc")} style={{
                         backgroundColor: "rgb(220, 100, 11)",
                         color: "white",
@@ -119,10 +120,10 @@ export default function Phone() {
                                             <Col>{formatPrice(filteredProduct.price)}</Col>
                                         </Row>
                                         <Row>
-                                            <Col md={6}><Button style={{
+                                            <Col md={6}><Link to={`/product/detail/${filteredProduct.id}`}><Button style={{
                                                 backgroundColor: 'rgb(220, 100, 11)',
                                                 color: 'white', fontWeight: 'bolder', fontSize: '14px'
-                                            }} variant="outline-warning">Detail</Button></Col>
+                                            }} variant="outline-warning">Detail</Button></Link></Col>
                                             <Col md={6}><Button style={{
                                                 backgroundColor: 'rgb(220, 100, 11)',
                                                 color: 'white', fontWeight: 'bolder', fontSize: '14px'
@@ -134,7 +135,7 @@ export default function Phone() {
                         </Col>
                     ))}
                 </Row>
-                <Row style={{display:'flex', justifyContent:'center', marginTop:'30px'}}>
+                <Row style={{ display: 'flex', justifyContent: 'center', marginTop: '30px' }}>
                     <ul className="pagination">
                         {Array.from({ length: Math.ceil(filteredSmartphone.length / productsPerPage) }).map((_, index) => (
                             <li key={index} className={`page-item ${index + 1 === currentPage ? 'active' : ''}`}>
