@@ -11,13 +11,15 @@ import {
   Image,
   Row,
 } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import CloseIcon from "@mui/icons-material/Close";
 import { Snackbar, SnackbarContent, IconButton } from "@mui/material";
 
 export default function Cart() {
   let user = JSON.parse(localStorage.getItem("user"));
+
+  const navigate = useNavigate();
 
   const [cart, setCart] = useState([]);
   const [cartItem, setCartItem] = useState([]);
@@ -70,7 +72,7 @@ export default function Cart() {
       await axios.put(`http://localhost:9999/cart/${cart.id}`, updatedCartData);
 
       showSnackbar(
-        `Sản phẩm ${item.name} đã được xoá khỏi giỏ hàng của bạn ⛔.`
+        `Sản phẩm [ ${item.name} ] đã được xoá khỏi giỏ hàng của bạn ⛔.`
       );
       setCartItem(updatedCart);
       setCart({ ...cart, total: updatedTotal });
@@ -81,9 +83,64 @@ export default function Cart() {
     } catch (err) {}
   };
 
+  const handleCheckout = async (cart) => {
+    console.log("Checkout");
+    console.log(cart);
+
+    try {
+      if (cart.item.length > 0) {
+        // Tạo một đơn hàng mới
+        const newOrder = {
+          userId: cart.userId,
+          item: cart.item,
+          total: cart.total,
+          address: user.address,
+          shipping: 0,
+          status: "Ordered",
+          orderAt: getCurrentDate(),
+        };
+
+        // Gửi đơn hàng mới lên cơ sở dữ liệu
+        const response = await axios.post(
+          "http://localhost:9999/order",
+          newOrder
+        );
+
+        // Sau khi đơn hàng được tạo thành công, bạn có thể xoá sản phẩm từ giỏ hàng
+        await axios.put(`http://localhost:9999/cart/${cart.id}`, {
+          ...cart,
+          item: [],
+          total: "0",
+        });
+
+        showSnackbar(
+          `Thanh toán thành công! Kiểm tra tình trạng đơn hàng trong mục 🚚 Tra cứu đơn hàng`
+        );
+
+        setTimeout(() => {
+          navigate("/order-tracking");
+        }, 5000);
+      } else {
+        showSnackbar(
+          `Không có sản phẩm nào để thanh toán, hãy quay lại Shop và chọn mua hàng! 🛒`
+        );
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   useEffect(() => {
     fetchCartByUser();
   }, []);
+
+  function getCurrentDate() {
+    const now = new Date();
+    const day = now.getDate().toString().padStart(2, "0");
+    const month = (now.getMonth() + 1).toString().padStart(2, "0");
+    const year = now.getFullYear();
+    return `${day}/${month}/${year}`;
+  }
 
   function formatPrice(price) {
     price = (price + "").replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -119,7 +176,7 @@ export default function Cart() {
 
       {/* Snackbar end */}
       <Container style={{ marginTop: "3rem" }}>
-        {cart ? (
+        {cart.item ? (
           <>
             <Row style={{ marginBottom: "3rem" }}>
               <Col>
@@ -146,7 +203,7 @@ export default function Cart() {
                       </Row>
                       <Row style={{ marginTop: "4.5rem" }}>
                         <Col md={6}>
-                          <h4>{formatPrice(item.price)}</h4>
+                          <h4>{formatPrice(item.price)} / 1</h4>
                         </Col>
                         <Col>
                           <Image
@@ -286,6 +343,7 @@ export default function Cart() {
                           borderColor: "#F86338",
                           backgroundColor: "#F86338",
                         }}
+                        onClick={() => handleCheckout(cart)}
                       >
                         Checkout
                       </Button>
